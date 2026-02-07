@@ -7,9 +7,12 @@ const resultBox = document.getElementById("resultBox");
 let yesSize = 18;
 let noMessages = [
   "Are you sure? 😳",
+  "Fr se no 😭",
+  "compensate karo",
   "Think again 😜",
   "Don't break my heart 💔",
   "Pleaseee 🥺",
+  "Na piyu Na",
   "Last chance 😢"
 ];
 let msgIndex = 0;
