@@ -1,34 +1,35 @@
 const yesBtn = document.getElementById("yesBtn");
 const noBtn = document.getElementById("noBtn");
+const main = document.getElementById("main");
+const result = document.getElementById("result");
 const noText = document.getElementById("noText");
-const questionBox = document.getElementById("questionBox");
-const resultBox = document.getElementById("resultBox");
 
-let yesSize = 18;
+let yesSize = 1;
 let noMessages = [
-  "Are you sure? 😳",
-  "Fr se no 😭",
-  "compensate karo",
-  "Think again 😜",
-  "Don't break my heart 💔",
+  "Are you sure? 😢",
+  "Think again 💔",
   "Pleaseee 🥺",
-  "Na piyu Na",
-  "Last chance 😢"
+  "Don't break my heart 😭",
+  "Last chance 😳"
 ];
-let msgIndex = 0;
+let noIndex = 0;
 
 noBtn.addEventListener("click", () => {
-  yesSize += 4;
-  yesBtn.style.fontSize = yesSize + "px";
+  // YES button grows
+  yesSize += 0.2;
+  yesBtn.style.transform = `scale(${yesSize})`;
 
-  noBtn.style.top = Math.random() * 80 + "%";
-  noBtn.style.left = Math.random() * 80 + "%";
+  // NO button moves
+  const x = Math.random() * 200 - 100;
+  const y = Math.random() * 100 - 50;
+  noBtn.style.transform = `translate(${x}px, ${y}px)`;
 
-  noText.innerText = noMessages[msgIndex % noMessages.length];
-  msgIndex++;
+  // Message changes
+  noText.innerText = noMessages[noIndex % noMessages.length];
+  noIndex++;
 });
 
 yesBtn.addEventListener("click", () => {
-  questionBox.classList.add("hidden");
-  resultBox.classList.remove("hidden");
+  main.classList.add("hidden");
+  result.classList.remove("hidden");
 });
