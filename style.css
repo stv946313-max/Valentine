@@ -72,3 +72,19 @@ button {
   border-radius: 20px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.3);
 }
+.photos {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.photos img {
+  width: 150px;
+  height: auto;
+  border-radius: 15px;
+  position: static !important;
+  display: block !important;
+  }
+  
